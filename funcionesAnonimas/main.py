@@ -106,3 +106,51 @@ suma_salarios=reduce(lambda cont, emp: cont +emp["salario"], empleados, 0)
 suma_salarios=reduce(lambda cont, emp: cont +emp["salario"] if emp["departamento"]=="IT" else cont, empleados, 0)
 print(suma_salarios)
 
+"""
+Ejercicios
+
+- Análisis de películas:
+    Tienes una lista de películas con su nombre, valoración y duración.
+        - Ordena las películas de mayor a menor en valoración. Luego ordénalas también alfabéticamente.
+        - Obtener solo las películas que duren más de 120 minutos.
+        - Crea una lista solo con los nombres de las películas.
+"""
+peliculas = [
+    {"nombre": "El padrino", "valoracion": 9.2, "duracion": 175},
+    {"nombre": "Toy Story", "valoracion": 8.9, "duracion": 154},
+    {"nombre": "El señor de los anillos", "valoracion": 8.3, "duracion": 81},
+    {"nombre": "Forrest Gump", "valoracion": 8.8, "duracion": 142},
+]
+
+print(sorted(peliculas,key=lambda peli:peli["valoracion"], reverse=True))
+print(sorted(peliculas,key=lambda peli:peli["nombre"]))
+
+print(list(filter(lambda peli:peli["duracion"]>120,peliculas)))
+
+
+
+"""
+- Procesamiento de ventas
+    Dada una lista de ventas, calcula el total de ventas y también obten las ventas mayores a 1000.
+"""
+ventas = [1500, 800, 2200, 600, 3500, 950, 1200, 450]
+
+print(reduce(lambda cont, venta:cont+venta,ventas,0))
+
+print(list(filter(lambda venta: venta>1000,ventas)))
+
+"""
+- Procesamiento de texto
+    Dada una lista de frases:
+        - Convertir todas las frases a mayúsculas
+        - Obtener solo las frases con más de 3 palabras
+        - ¿Cuántas palabras tienen todas mis frases en total?
+"""
+frases = [
+    "Python es genial",
+    "Me gusta programar",
+    "Hola mundo",
+    "La programación funcional es interesante",
+    "Hola"
+]
+
