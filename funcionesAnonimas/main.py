@@ -127,6 +127,7 @@ print(sorted(peliculas,key=lambda peli:peli["nombre"]))
 
 print(list(filter(lambda peli:peli["duracion"]>120,peliculas)))
 
+print(list(map(lambda peli:peli["nombre"],peliculas)))
 
 
 """
@@ -154,3 +155,8 @@ frases = [
     "Hola"
 ]
 
+print(list(map(lambda frase:frase.upper(), frases)))
+
+print(list(filter(lambda frase: frase.count(" ")>=2 ,frases)))
+
+print(reduce(lambda cont, frase: cont+len(frase.split()),frases,0))
